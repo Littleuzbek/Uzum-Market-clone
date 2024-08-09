@@ -1,0 +1,14 @@
+.productPage{
+    width: 90rem;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.productDetails{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    background-color: rgb(245, 244, 244);
+}

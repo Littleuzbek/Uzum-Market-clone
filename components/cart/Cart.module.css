@@ -1,0 +1,246 @@
+.cartContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.items{
+    width: 60rem;
+    height: auto;
+    border: 1px solid var(--borderColor);
+    border-radius: 10px;
+}
+
+.chooseAll{
+    width: 100%;
+    height: 3rem;
+    border-bottom: 1px solid var(--borderColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chooseAll > *{
+    margin: 0 .8rem;
+}
+
+.chooseAll > div{
+    display: flex;
+    gap: .5rem;
+}
+
+.chooseAll > span{
+    font-size: .85rem;
+    display: flex;
+    gap: .5rem;
+}
+
+.chooseAll > span > p{
+    color: #7f4dff;
+    border: 1px solid #7000ff;
+    padding: 2px 5px;
+}
+
+.chooseAll > div > input{
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.delivery{
+    margin: 1rem;
+}
+
+.aboutItem{
+    width: 100%;
+    height: 10rem;
+    display: flex;
+}
+
+.aboutItem > input{
+    width: 1rem;
+    margin: 0 1.1rem 0 .9rem;
+}
+
+.image{
+    width: 8rem;
+    height: 100%;
+    margin: 0 1.5rem 0 0;
+    object-fit: contain;
+}
+
+.wrapContainer{
+    width: 47.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.productName{
+    width: 80%;
+    font-size: 1.2rem;
+    word-break: break-word;
+    text-decoration: none;
+    color: black;
+}
+
+.deleteBtn{
+    width: 18%;
+    height: 2rem;
+    color: rgb(168, 168, 168);
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: .5rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.deleteBtn:hover{
+    color: black;
+}
+
+.trashIcon{
+    font-size: 1.3rem;
+}
+
+.ownerName,
+.pickedColor{
+    width: 20rem;
+    font-size: .9rem;
+    word-break: break-word;
+    gap: .5rem;
+    color: rgb(168, 168, 168);
+    margin: .5rem 0;
+    display: flex;
+}
+
+.ownerName > p,
+.pickedColor > p{
+    color: black;
+    font-size: 1rem;
+}
+
+.amount{
+    width: 8rem;
+    height: 2.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border: 1px solid var(--borderColor);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.amount > button{
+    width: 3rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.price{
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.price > p{
+    font-size: 1.6rem;
+}
+
+.price > s{
+    font-size: .9rem;    
+}
+
+.totalPriceContainer{
+    width: 24rem;
+    height: fit-content;
+    padding: 10px;
+    border: 1px solid var(--borderColor);
+    border-radius: 10px;
+}
+
+.realPrice{
+    margin: 1.5rem 0 0 0;
+    font-size: .9rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.deliveryDate{
+    border: 1px solid #7000ff;
+    color: #7f4dff;
+    font-size: .8rem;
+    padding: 5px 0;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.totalPrice{
+    display: flex;
+    justify-content: space-between;
+}
+
+.totalPrice > p{
+    font-size: .9rem;
+}
+
+.totalPrice > div > p{
+    font-size: 1.2rem;
+}
+
+.totalPrice > div > p:nth-child(2){
+    font-size: .8rem;
+    text-align: end;
+    font-weight: 500;
+    color: #00ad3a;
+}
+
+.buyBtn{
+    width: 100%;
+    padding: 10px;
+    margin: 1rem 0;
+    border-radius: 10px;
+    border: none;
+    background-color: #7f4dff;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.itemsNone{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.itemsNone > img{
+    width: 25rem;
+    height: 15rem;
+    object-fit: cover;
+    margin: 1rem 0;
+}
+
+.itemsNone > h3 {
+    display: flex;
+    align-items: center;
+}
+
+.itemsNone > h3 > p {
+    font-size: 2.2rem;
+}
+

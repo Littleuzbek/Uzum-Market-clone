@@ -1,0 +1,234 @@
+.shopDetails{
+    width: 29rem;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.shopping{
+    width: 100%;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+.pickColor{
+    width: 100%;
+    height: 3.5rem;
+    margin: 1rem 0 0 0 ;
+}
+
+.pickColor > span{
+    font-size: .9rem;
+    display: flex;
+    gap: .5rem;
+}
+
+.pickColor > span > p{
+    font-weight: 600;
+}
+
+.pickColor > div {
+    width: fit-content;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: .3rem 0 0 0;
+    padding: .5rem;
+    border-radius: 20px;
+    background-color: rgb(201, 201, 201);
+    border: 1px solid var(--borderColor);
+}
+
+.pickColor > div > span{
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.active{
+    padding: 3px;
+    border: 2px solid black;
+}
+
+.pickColor > div > span > div{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pickColor > div > span:nth-child(1) > div{
+    background-color: white;
+}
+
+.pickColor > div > span:nth-child(2) > div{
+    background-color: black;
+}
+
+.pickColor > div > span:nth-child(3) > div{
+    background-color: rgb(48, 180, 233);
+}
+
+.pickColor > div > span:nth-child(4) > div{
+    background-color: brown;
+}
+
+.amountContainer{
+    width: 8rem;
+    margin: .5rem 0;
+}
+
+.amountContainer > p{
+    margin: .5rem 0 .3rem 0;
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.amountContainer > .amount{
+    width: 100%;
+    height: 2.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border: 1px solid var(--borderColor);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.amountContainer > .amount > button{
+    width: 3rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.priceContainer{
+    width: 100%;
+    height: 2rem;
+    margin: .5rem 0;
+}
+
+.priceContainer > p{
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.price{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* background-color: black; */
+}
+
+.price > p:nth-child(1){
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.credit{
+    margin: 2rem 0 0 0;
+    padding: 0 1rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    background-color: rgb(207, 207, 207);
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.credit:hover{
+    background-color: rgb(182, 182, 182);
+}
+
+.credit > span{
+    background-color: yellow;
+    border-radius: 20px;
+    padding: 3px 5px;
+}
+
+.btnContainer{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 1rem 0;
+}
+
+.btnContainer > button{
+    width: 45%;
+    height: 100%;
+    font-size: 1.15rem;
+    border-radius: 10px;
+    border: 2px solid #723ef7;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btnContainer > button:nth-child(1){
+    background-color: #723ef7;
+}
+
+.btnContainer > button:nth-child(1):hover{
+    background-color: #7f4dff;
+}
+
+.btnContainer > button:nth-child(2):hover{
+    background-color: rgb(207, 207, 207);
+}
+
+.infoBanner{
+    padding: 10px;
+    font-size: .9rem;
+    line-height: 1.3rem;
+    border: 1px solid var(--borderColor);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.delivery{
+    padding: 0 0 .8rem 0;
+    border-bottom: 1px solid var(--borderColor);
+}
+
+.delivery> p:nth-child(1),
+.payment> p:nth-child(1),
+.return > p:nth-child(1){
+    font-weight: 600;
+}
+
+.payment{
+    padding: 0 0 .8rem 0;
+    border-bottom: 1px solid var(--borderColor);
+}
+
+.iconContainer{
+    display: flex;
+    gap: .8rem;
+    margin: .5rem 0 0 0;
+}
+
+.iconContainer > svg{
+    width: 40px;
+    height: 40px;
+}
+
+.purchased{
+    width: 100%;
+    height: 2rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 2rem;
+    border-radius: 10px;
+    background-color: #fff1cc;
+    gap: .5rem;
+}
