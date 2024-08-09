@@ -42,7 +42,7 @@ export default function TotalPrice({ totalDiscount, totalPrice, months }) {
           </p>
         </div>
       </div>
-      <button className={classes.buyBtn}>Rasmiylashtirishga o'tish</button>
+      <button className={classes.buyBtn}>Rasmiylashtirishga o&apos;tish</button>
     </div>
   );
 }
