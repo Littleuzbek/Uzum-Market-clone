@@ -7,7 +7,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 
-export default function page() {
+export default function Upload() {
   const [img, setImg] = useState();
 
   const uploadPic = async () => {
