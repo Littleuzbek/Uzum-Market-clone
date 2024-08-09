@@ -126,9 +126,9 @@ export default function ShopDetails({ productDetails }) {
               .toLocaleString("en-US", { minimumFractionDigits: 2 })
               .replaceAll(".00", "")
               .replaceAll(",", " ")}{" "}
-            so'mdan
+            so&apos;mdan
           </span>
-          muddatli to'lov
+          muddatli to&apos;lov
         </p>
         <div className={classes.btnContainer}>
           <button
@@ -136,7 +136,7 @@ export default function ShopDetails({ productDetails }) {
               addToCart();
             }}
           >
-            Savatga qo'shish
+            Savatga qo&apos;shish
           </button>
           <button>Xarid qilish</button>
         </div>
@@ -146,8 +146,8 @@ export default function ShopDetails({ productDetails }) {
             <p>Uzum buyurtmalarni topshirish punkitida yoki kuryer orqali</p>
           </div>
           <div className={classes.payment}>
-            <p>Qulay usulda xavfsiz to'lov</p>
-            <p>Karta orqali, naqd yoki bo'lib to'lang</p>
+            <p>Qulay usulda xavfsiz to&apos;lov</p>
+            <p>Karta orqali, naqd yoki bo&apos;lib to'lang</p>
             <div className={classes.iconContainer}>
               <UzumBankIcon />
               <UzumNasiyaIcon />

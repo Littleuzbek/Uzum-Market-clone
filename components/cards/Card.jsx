@@ -22,14 +22,14 @@ export default function Card({products,title}) {
                 .toLocaleString("en-US", { minimumFractionDigits: 2 })
                 .replaceAll(".00", "")
                 .replaceAll(",", " ")}{" "}
-              so'm/oyiga
+              so&apos;m/oyiga
             </p>
             <div>
               <div className={classes.price}>
                 <p>
                   <s>{laptop?.price}</s>
                 </p>
-                <p>{laptop?.discount} so'm</p>
+                <p>{laptop?.discount} so&apos;m</p>
               </div>
                 <AddToCart product={laptop} />
             </div>

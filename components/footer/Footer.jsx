@@ -12,7 +12,7 @@ export default function Footer() {
         </div>
         <div>
           <h3>Foydalanuvchilarga</h3>
-          <p>Biz bilan bog'lanish</p>
+          <p>Biz bilan bog&apos;lanish</p>
           <p>Savol-Javob</p>
         </div>
         <div>
@@ -121,7 +121,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <h3>"Uzum Market" 2024. Barcha huquqlar himoyalangan</h3>
+      <h3>&quot;Uzum Market&quot; 2024. Barcha huquqlar himoyalangan</h3>
     </div>
   );
 }

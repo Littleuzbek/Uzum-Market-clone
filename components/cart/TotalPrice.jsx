@@ -15,7 +15,7 @@ export default function TotalPrice({ totalDiscount, totalPrice, months }) {
             .toLocaleString("en-US", { minimumFractionDigits: 2 })
             .replaceAll(".00", "")
             .replaceAll(",", " ")}{" "}
-          so'm
+          so&apos;m
         </p>
       </div>
       <div className={classes.deliveryDate}>
@@ -30,7 +30,7 @@ export default function TotalPrice({ totalDiscount, totalPrice, months }) {
               .toLocaleString("en-US", { minimumFractionDigits: 2 })
               .replaceAll(".00", "")
               .replaceAll(",", " ")}{" "}
-            so'm
+            so&apos;m
           </p>
           <p>
             Tejovingiz:{" "}
@@ -38,7 +38,7 @@ export default function TotalPrice({ totalDiscount, totalPrice, months }) {
               .toLocaleString("en-US", { minimumFractionDigits: 2 })
               .replaceAll(".00", "")
               .replaceAll(",", " ")}{" "}
-            so'm
+            so&apos;m
           </p>
         </div>
       </div>

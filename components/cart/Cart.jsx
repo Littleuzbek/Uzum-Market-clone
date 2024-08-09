@@ -136,7 +136,7 @@ export default function Cart() {
                         className={classes.deleteBtn}
                         onClick={() => amountHandler("delete", product)}
                       >
-                        <BsTrash3Fill className={classes.trashIcon} /> Yo'q
+                        <BsTrash3Fill className={classes.trashIcon} /> Yo&apos;q
                         qilish
                       </div>
                       <div>
