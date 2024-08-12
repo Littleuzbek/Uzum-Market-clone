@@ -69,7 +69,7 @@ export default function ShopDetails({ productDetails }) {
               <div></div>
             </span>
             <span
-              className={activeColor === "Ko'k" ? classes.active : {}}
+              className={activeColor === `K'ok` ? classes.active : {}}
               onClick={() => setActiveColor("Ko'k")}
             >
               <div></div>
@@ -147,7 +147,7 @@ export default function ShopDetails({ productDetails }) {
           </div>
           <div className={classes.payment}>
             <p>Qulay usulda xavfsiz to&apos;lov</p>
-            <p>Karta orqali, naqd yoki bo&apos;lib to'lang</p>
+            <p>Karta orqali, naqd yoki bo&apos;lib to&apos;lang</p>
             <div className={classes.iconContainer}>
               <UzumBankIcon />
               <UzumNasiyaIcon />

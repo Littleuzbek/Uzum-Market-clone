@@ -19,7 +19,7 @@ export default function Wishes() {
         dispatch(cartAction.setWish({wish: JSON.parse(localData), firstWishReload: true}))
       }
     }
-  }, [])
+  }, [wishes.length, dispatch])
 
   return (
     <div>

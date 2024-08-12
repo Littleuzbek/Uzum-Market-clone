@@ -60,7 +60,7 @@ export default function Cart() {
         );
       }
     }
-  }, [cart.length, dispatch]);
+  }, [cart.length, firstReload, dispatch]);
 
   const amountHandler = (action, product) => {
     if (action === "delete") {
