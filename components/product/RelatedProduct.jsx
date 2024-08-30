@@ -16,7 +16,7 @@ export default function RelatedProduct({ relatedProducts }) {
   const [position,setPosition] = useState(0)
   return (
     <Fragment>
-      <h1 className={classes.relatedTitle}>O'xshash mahsulotlar</h1>
+      <h1 className={classes.relatedTitle}>O&apos;xshash mahsulotlar</h1>
       <div
         className={`${classes.relatedProducts} flex max-w-xl space-x-3 overflow-x-scroll scrollbar-hide`}
         ref={ref}

@@ -56,10 +56,10 @@ export default function Login() {
                   required
                 />
               </div>
-              {error && <p className={classes.error}>Raqam formati noto'g'ri</p>}
+              {error && <p className={classes.error}>Raqam formati noto&apos;g&apos;ri</p>}
               <button>Kodni olish</button>
               <p>
-                Avtotizatsiyadan o'tish orqali siz shaxsiy ma'lumotlarni qayta
+                Avtotizatsiyadan o&apos;tish orqali siz shaxsiy ma&apos;lumotlarni qayta
                 ishlash siyosatiga rozilik bildirasiz
               </p>
             </form>
