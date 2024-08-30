@@ -11,7 +11,12 @@ body{
     height: 100vh;
 }
 
-:root{
-    --borderColor: rgb(160, 160, 160);
-    --hoverBackground: #ceccff;
+@media screen and (max-width: 639px) {
+    html{
+        width: 100%;
+    }
+    body{
+     width: 100%;   
+     height: 100dvh;
+    }
 }

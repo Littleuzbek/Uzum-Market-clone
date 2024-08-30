@@ -1,5 +1,5 @@
 import Image from "next/image";
-import wishCat from '@/components/images/cats/wishes.png'
+import wishCat from '@/components/images/wishes.png'
 import classes from '@/app/wishes/page.module.css'
 
 export default function WishesNone() {

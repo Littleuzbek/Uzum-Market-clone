@@ -1,246 +1,426 @@
-.cartContainer{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    gap: 1rem;
-    margin: 1rem 0;
+.cartContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
-.items{
-    width: 60rem;
-    height: auto;
-    border: 1px solid var(--borderColor);
-    border-radius: 10px;
+.items {
+  width: 60rem;
+  height: auto;
+  border: 1px solid rgb(160, 160, 160);
+  border-radius: 10px;
 }
 
-.chooseAll{
-    width: 100%;
-    height: 3rem;
-    border-bottom: 1px solid var(--borderColor);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.chooseAll {
+  width: 100%;
+  height: 3rem;
+  border-bottom: 1px solid rgb(160, 160, 160);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.chooseAll > *{
-    margin: 0 .8rem;
+.chooseAll > * {
+  margin: 0 0.8rem;
 }
 
-.chooseAll > div{
-    display: flex;
-    gap: .5rem;
+.chooseAll > div {
+  font-size: 0.85rem;
 }
 
-.chooseAll > span{
-    font-size: .85rem;
-    display: flex;
-    gap: .5rem;
+.chooseAll > span {
+  font-size: 0.85rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
-.chooseAll > span > p{
-    color: #7f4dff;
-    border: 1px solid #7000ff;
-    padding: 2px 5px;
+.chooseAll > span > p {
+  color: #7f4dff;
+  border: 1px solid #7000ff;
+  padding: 2px 5px;
 }
 
-.chooseAll > div > input{
-    width: 1rem;
-    height: 1rem;
-    border: none;
-    border-radius: 5px;
-    overflow: hidden;
+.chooseAll > div > input {
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.delivery{
-    margin: 1rem;
+.delivery {
+  margin: 1rem;
 }
 
-.aboutItem{
-    width: 100%;
-    height: 10rem;
-    display: flex;
+.itemContainer {
+  width: 100%;
+  height: 10rem;
+  display: flex;
 }
 
-.aboutItem > input{
-    width: 1rem;
-    margin: 0 1.1rem 0 .9rem;
+.image {
+  width: 8rem !important;
+  height: 100% !important;
+  margin: 0 1.5rem 0 1.5rem;
+  object-fit: contain;
+  position: unset !important;
 }
 
-.image{
-    width: 8rem;
-    height: 100%;
-    margin: 0 1.5rem 0 0;
-    object-fit: contain;
+.aboutItem {
+  width: 47.5rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.wrapContainer{
-    width: 47.5rem;
-    display: flex;
-    flex-wrap: wrap;
+.aboutItemMobile {
+  display: none;
 }
 
-.productName{
-    width: 80%;
-    font-size: 1.2rem;
-    word-break: break-word;
-    text-decoration: none;
-    color: black;
+.actions{
+  display: none;
 }
 
-.deleteBtn{
-    width: 18%;
-    height: 2rem;
-    color: rgb(168, 168, 168);
-    font-size: .9rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: .5rem;
-    cursor: pointer;
-    transition: .3s;
+.productName {
+  width: 80%;
+  font-size: 1.2rem;
+  word-break: break-word;
+  text-decoration: none;
+  color: black;
 }
 
-.deleteBtn:hover{
-    color: black;
+.deleteBtn {
+  width: 18%;
+  height: 2rem;
+  color: rgb(168, 168, 168);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.trashIcon{
-    font-size: 1.3rem;
+.deleteBtn:hover {
+  color: black;
+}
+
+.trashIcon {
+  font-size: 1.3rem;
 }
 
 .ownerName,
-.pickedColor{
-    width: 20rem;
-    font-size: .9rem;
-    word-break: break-word;
-    gap: .5rem;
-    color: rgb(168, 168, 168);
-    margin: .5rem 0;
-    display: flex;
+.pickedColor {
+  width: 20rem;
+  font-size: 0.9rem;
+  word-break: break-word;
+  gap: 0.5rem;
+  color: rgb(168, 168, 168);
+  margin: 0.5rem 0;
+  display: flex;
 }
 
 .ownerName > p,
-.pickedColor > p{
-    color: black;
-    font-size: 1rem;
+.pickedColor > p {
+  color: black;
+  font-size: 1rem;
 }
 
-.amount{
-    width: 8rem;
-    height: 2.2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    border: 1px solid var(--borderColor);
-    border-radius: 20px;
-    overflow: hidden;
+.amount {
+  width: 8rem;
+  height: 2.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: 1px solid rgb(160, 160, 160);
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.amount > button{
-    width: 3rem;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background-color: white;
-    cursor: pointer;
+.amount > button {
+  width: 3rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: white;
+  cursor: pointer;
 }
 
-.price{
-    width: 18rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 1rem;
+.price {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
 }
 
-.price > p{
-    font-size: 1.6rem;
+.price > p {
+  font-size: 1.6rem;
 }
 
-.price > s{
-    font-size: .9rem;    
+.price > s {
+  font-size: 0.9rem;
 }
 
-.totalPriceContainer{
-    width: 24rem;
-    height: fit-content;
-    padding: 10px;
-    border: 1px solid var(--borderColor);
-    border-radius: 10px;
+.totalPriceContainer {
+  width: 24rem;
+  height: fit-content;
+  padding: 10px;
+  border: 1px solid rgb(160, 160, 160);
+  border-radius: 10px;
 }
 
-.realPrice{
-    margin: 1.5rem 0 0 0;
-    font-size: .9rem;
-    display: flex;
-    justify-content: space-between;
+.realPrice {
+  margin: 1.5rem 0 0 0;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
 }
 
-.deliveryDate{
-    border: 1px solid #7000ff;
-    color: #7f4dff;
-    font-size: .8rem;
-    padding: 5px 0;
-    margin: 1rem 0;
-    text-align: center;
+.deliveryDate {
+  border: 1px solid #7000ff;
+  color: #7f4dff;
+  font-size: 0.8rem;
+  padding: 5px 0;
+  margin: 1rem 0;
+  text-align: center;
 }
 
-.totalPrice{
-    display: flex;
-    justify-content: space-between;
+.totalPrice {
+  display: flex;
+  justify-content: space-between;
 }
 
-.totalPrice > p{
-    font-size: .9rem;
+.totalPrice > p {
+  font-size: 0.9rem;
 }
 
-.totalPrice > div > p{
-    font-size: 1.2rem;
+.totalPrice > div > p {
+  font-size: 1.2rem;
 }
 
-.totalPrice > div > p:nth-child(2){
-    font-size: .8rem;
-    text-align: end;
-    font-weight: 500;
-    color: #00ad3a;
+.totalPrice > div > p:nth-child(2) {
+  font-size: 0.8rem;
+  text-align: end;
+  font-weight: 500;
+  color: #00ad3a;
 }
 
-.buyBtn{
-    width: 100%;
-    padding: 10px;
-    margin: 1rem 0;
-    border-radius: 10px;
-    border: none;
-    background-color: #7f4dff;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
+.buyBtn {
+  width: 100%;
+  padding: 10px;
+  margin: 1rem 0;
+  border-radius: 10px;
+  border: none;
+  background-color: #7f4dff;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
-.itemsNone{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.checkoutMobileContainer{
+  display: none;
 }
 
-.itemsNone > img{
-    width: 25rem;
-    height: 15rem;
-    object-fit: cover;
-    margin: 1rem 0;
+.itemsNone {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemsNone > img {
+  width: 25rem;
+  height: 15rem;
+  object-fit: cover;
+  margin: 1rem 0;
 }
 
 .itemsNone > h3 {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .itemsNone > h3 > p {
-    font-size: 2.2rem;
+  font-size: 2.2rem;
 }
 
+@media screen and (max-width: 639px) {
+  .cartContainer {
+    width: 100% !important;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .items {
+    width: 100%;
+    border-radius: 0;
+    border-top: 0.5px solid rgb(160, 160, 160);
+  }
+  .chooseAll {
+    height: auto;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0.5rem 0 0 0;
+    border: none;
+  }
+  .chooseAll > div {
+    display: none;
+  }
+  .chooseAll > span {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: rgb(216, 216, 216);
+    padding: 0.5rem 0;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .chooseAll > span > p {
+    border: none;
+  }
+
+  .items{
+    width: 100%;
+  }
+
+  .itemContainer {
+    flex-wrap: wrap;
+  }
+
+  .delivery{
+    font-size: .9rem;
+  }
+
+  .image {
+    width: 30% !important;
+    height: 70% !important;
+    margin: 0 0.5rem;
+  }
+
+  .aboutItem {
+    display: none;
+  }
+
+  .aboutItemMobile {
+    width: 62%;
+    height: auto;
+    display: block;
+  }
+
+  .actions {
+    width: 95%;
+    height: 25%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .actions > p{
+    font-size: .7rem;
+    line-height: 1rem;
+    margin: 0 0 0 .5rem;
+  }
+
+  .productName,
+  .aboutItemMobile > div > span,
+  .aboutItemMobile > div > span > p {
+    font-size: 0.9rem;
+  }
+  
+  .price {
+    width: 100%;
+    gap: 0;
+  }
+  
+  .price > p {
+    font-weight: 450;
+    font-size: 1.15rem;
+  }
+
+  .price > s{
+    font-size: .9rem;
+  }
+  
+  .amount {
+    width: 30%;
+  }
+  
+  .amount > button{
+    color: black;
+  }
+
+  .deleteBtn {
+    width: 30%;
+    font-size: .9rem;
+  }
+
+  .deleteBtn:hover {
+    color: rgb(168, 168, 168);
+  }
+
+  .checkoutBtn {
+    display: none;
+  }
+
+  .checkoutMobileContainer{
+    width: 100%;
+    height: 3rem;
+    position: fixed;
+    bottom: 3.5rem;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+  }
+
+  .checkoutMobileContainer > div{
+    margin: 0 0 0 .2rem;
+  }
+  
+  .checkoutMobileContainer > div > p{
+    font-weight: 600;
+    font-size: .8rem;
+    margin: 0 0 .2rem 0;
+    padding: 0;
+  }
+
+  .checkoutMobileBtn{
+    width: 45%;
+    height: 100%;
+    margin: 0 .2rem 0 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .checkoutMobileBtn > button{
+    font-size: 1rem;
+  }
+
+  .itemsNone {
+    width: 100%;
+  }
+  .itemsNone > img {
+    width: 15rem;
+    height: 10rem;
+  }
+  .itemsNone > h3 > p,
+  .itemsNone > h3 {
+    font-size: 1rem;
+  }
+
+  .totalPriceContainer{
+    width: 100%;
+    border-radius: 0;
+  }
+}

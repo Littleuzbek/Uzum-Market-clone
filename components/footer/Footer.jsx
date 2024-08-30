@@ -121,7 +121,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <h3>&quot;Uzum Market&quot; 2024. Barcha huquqlar himoyalangan</h3>
+      <p>&quot;Uzum Market&quot; 2024. Barcha huquqlar himoyalangan</p>
     </div>
   );
 }

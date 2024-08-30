@@ -3,3 +3,14 @@
    height: auto;
    margin: 0 auto;
 }
+
+@media screen and (max-width: 390px) {
+   .cart{
+      width: 100%;
+   }  
+   
+   .cart > h2{
+      font-size: 1rem;
+      text-align: center;
+   }
+}

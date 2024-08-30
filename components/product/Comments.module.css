@@ -62,3 +62,30 @@
 .answerOfOwner{
     margin: 0 0 1rem 2rem;
 }
+
+@media screen and (max-width: 639px) {
+    .comments{
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }  
+    .comments > h1{
+        font-size: 1.38rem;
+    }
+    .userComment{
+        margin: 0;
+        padding: 0;
+    }
+    .name,
+    .owner{
+        font-size: 1rem;
+    }
+    .date,
+    .comment,
+    .answerOfOwner{
+        font-size: .8rem;
+    }
+    .comments::-webkit-scrollbar{
+        display: none;
+    }
+}

@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getItem, setItem } from "./LocalStorage";
 
 const CartSlice = createSlice({
   name: "cart",
@@ -9,8 +8,7 @@ const CartSlice = createSlice({
     totalDiscount: 0,
     totalPrice: 0,
     wishes: [],
-    firstReload: false,
-    firstWishReload: false
+    searchResult: []
   },
   reducers: {
     addItem(state, action) {
@@ -20,7 +18,7 @@ const CartSlice = createSlice({
             ? action.payload.discount
             : Number(action.payload.discount.replaceAll(" ", "")),
         id: action.payload.id,
-        cartItemId: action.payload.id + (action.payload.color || ""),
+        cartItemId: action.payload.id + (action.payload.color || "") + (action.payload.size || ""),
         image: action.payload.image,
         name: action.payload.name,
         price:
@@ -29,6 +27,7 @@ const CartSlice = createSlice({
             : Number(action.payload.price.replaceAll(" ", "")),
         rating: action.payload.rating,
         specs: action.payload.specs,
+        proType: action.payload.proType,
         quantity: action.payload.quantity || 1,
         totalPrice:
           typeof action.payload.price === "number"
@@ -41,6 +40,7 @@ const CartSlice = createSlice({
             : Number(action.payload.discount.replaceAll(" ", "")) *
               (action.payload.quantity || 1),
         color: action.payload.color || "",
+        size: action.payload.size || ""
       };
 
       const existingItem = state.cart.find(
@@ -60,30 +60,6 @@ const CartSlice = createSlice({
         state.totalDiscount += newItem.totalDiscount;
         state.totalPrice += newItem.totalPrice;
       }
-
-      if (!state.firstReload) {
-        const { localData } = getItem("cart");
-        const { localData: totalDiscount } = getItem("totalDiscount");
-        const { localData: totalPrice } = getItem("totalPrice");
-        const { localData: totalProduct } = getItem("totalProduct");
-
-        const updatedCart = [newItem, ...(JSON.parse(localData) || [])];
-
-        setItem("cart", updatedCart);
-        setItem(
-          "totalDiscount",
-          JSON.parse(totalDiscount) || state.totalDiscount
-        );
-        setItem("totalPrice", JSON.parse(totalPrice) || state.totalPrice);
-        setItem("totalProduct", JSON.parse(totalProduct) || state.totalProduct);
-
-        state.firstReload = true;
-      } else {
-        setItem("cart", state.cart);
-        setItem("totalDiscount", state.totalDiscount);
-        setItem("totalPrice", state.totalPrice);
-        setItem("totalProduct", state.totalProduct);
-      }
     },
     removeItem(state, action) {
       const newItem = action.payload.product || action.payload;
@@ -97,11 +73,6 @@ const CartSlice = createSlice({
         existingItem.totalPrice -= newItem.price;
         state.totalDiscount -= newItem.discount;
         state.totalPrice -= newItem.price;
-
-        setItem("cart", state.cart);
-        setItem("totalDiscount", state.totalDiscount);
-        setItem("totalPrice", state.totalPrice);
-        setItem("totalProduct", state.totalProduct);
       } else {
         state.cart = state.cart.filter(
           (item) => item.cartItemId !== newItem.cartItemId
@@ -109,47 +80,19 @@ const CartSlice = createSlice({
         state.totalDiscount -= existingItem.totalDiscount;
         state.totalPrice -= existingItem.totalPrice;
         state.totalProduct -= 1;
-
-        setItem("cart", state.cart);
-        setItem("totalDiscount", state.totalDiscount);
-        setItem("totalPrice", state.totalPrice);
-        setItem("totalProduct", state.totalProduct);
       }
     },
-    setLocalStorageItems(state, action) {
-      if (action.payload.nonEmpty) {
-        state.cart = [...action.payload.cart, ...state.cart];
-      } else {
-        state.cart = action.payload.cart;
-      }
-      state.localStorage = action.payload.firstReload;
-    },
-    setSum(state, action) {
-      state.totalDiscount = action.payload.totalDiscount;
-      state.totalPrice = action.payload.totalPrice;
-      state.totalProduct = action.payload.totalProduct;
-    },
-    setWish(state, action) {
-      if (action.payload.firstWishReload) {
-        state.wishes = action.payload.wish
-        state.firstWishReload = true;
-      } else {
-        const {localData} = getItem('wishes');
+    manageWish(state, action) {
         const existingWish = state.wishes.find(wish => wish.id === action.payload.id);
         if(!existingWish){
           state.wishes.push(action.payload);
         }else{
           state.wishes = state.wishes.filter(wish => wish.id !== existingWish.id)
         }
-
-        if(state.firstWishReload){
-          setItem('wishes', state.wishes)
-        }else{
-          const localWishes = JSON.parse(localData);
-          setItem('wishes', [...state.wishes, ...(localWishes || [])])
-        }
-      }
     },
+    setSearchResult(state,action){
+      state.searchResult = action.payload
+    }
   },
 });
 

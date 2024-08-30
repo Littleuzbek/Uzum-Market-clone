@@ -4,34 +4,51 @@ import Link from "next/link";
 import WishButton from "./WishButton";
 import AddToCart from "./AddToCart";
 
-export default function Card({products,title}) {
+export default function Card({ products, title }) {
   return (
     <div className={classes.cardContainer}>
       <h1>{title}</h1>
       <div>
-        {products.map((laptop) => (
-          <Link href={`/product/${laptop?.id} ${laptop?.name}`} className={classes.card} key={laptop?.id}>
+        {products?.map((product) => (
+          <Link
+            href={`/product/${product?.proType} ${product?.id}`}
+            className={classes.card}
+            key={product?.id}
+          >
             <div className={classes.image}>
-              <Image src={laptop?.image} alt={laptop?.name} />
-              <WishButton product={laptop}/>
+              <Image src={product?.image} alt={product?.name} fill sizes="auto" priority/>
+              <WishButton product={product} />
             </div>
-            <p>{laptop?.name}</p>
-            <p>⭐ {laptop?.rating}</p>
-            <p>
-              {Math.floor(Number(laptop?.discount?.replaceAll(" ", "")) / 12)
-                .toLocaleString("en-US", { minimumFractionDigits: 2 })
-                .replaceAll(".00", "")
+            <div className={classes.shortInfo}>
+              <p>{product?.name}</p>
+              <p>⭐ {product?.rating}</p>
+              <p>
+              {(product?.discount / 12)
+                ?.toLocaleString("en-US", { minimumFractionDigits: 2 })
+                .split('.')[0]
                 .replaceAll(",", " ")}{" "}
               so&apos;m/oyiga
-            </p>
+              </p>
+            </div>
             <div>
               <div className={classes.price}>
                 <p>
-                  <s>{laptop?.price}</s>
+                  <s>
+                    {product?.price
+                      ?.toLocaleString("en-US", { minimumFractionDigits: 2 })
+                      .split('.')[0]
+                      .replaceAll(",", " ")}
+                  </s>
                 </p>
-                <p>{laptop?.discount} so&apos;m</p>
+                <p>
+                  {product?.discount
+                    ?.toLocaleString("en-US", { minimumFractionDigits: 2 })
+                    .split('.')[0]
+                    .replaceAll(",", " ")}{" "}
+                  so&apos;m
+                </p>
               </div>
-                <AddToCart product={laptop} />
+              <AddToCart product={product} />
             </div>
           </Link>
         ))}

@@ -18,11 +18,16 @@
   opacity: 0;
   transform: scale(1.1) translateX(-1rem) rotate(-5deg);
   transition: all 0.5s ease-in-out;
-  cursor: pointer;
 }
 
 .slider > .active {
   z-index: 1;
   opacity: 1;
   transform: scale(1) translateX(0) rotate(0);
+}
+
+@media screen and (max-width: 639px) {
+  .slider{
+    height: 7rem;
+  }
 }

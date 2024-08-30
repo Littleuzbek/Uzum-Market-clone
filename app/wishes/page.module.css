@@ -18,3 +18,11 @@
 .noWish > h3{
     margin: 1rem 0 0 0;
 }
+
+@media screen and (max-width: 639px) {
+    .noWish > img{
+        width: 90%;
+        height: 18rem;
+        object-fit: cover;
+    }
+}

@@ -12,7 +12,7 @@ export default function WishButton({product}) {
   const addToWishes = (e)=>{
     e.preventDefault();
 
-    dispatch(cartAction.setWish(product))
+    dispatch(cartAction.manageWish(product))
   }
 
   return (

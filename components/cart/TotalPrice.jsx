@@ -1,9 +1,12 @@
+import { useSelector } from "react-redux";
 import classes from "./Cart.module.css";
+import Link from "next/link";
 
-export default function TotalPrice({ totalDiscount, totalPrice, months }) {
+export default function TotalPrice({ months }) {
   const deliveryDate = new Date().getDate() + 1;
   const deliveryMonth = new Date().getMonth() + (deliveryDate > 31 ? 1 : 0);
-
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
+  const totalDiscount = useSelector((state) => state.cart.totalDiscount);
 
   return (
     <div className={classes.totalPriceContainer}>
@@ -13,7 +16,7 @@ export default function TotalPrice({ totalDiscount, totalPrice, months }) {
         <p>
           {totalPrice
             .toLocaleString("en-US", { minimumFractionDigits: 2 })
-            .replaceAll(".00", "")
+            .split('.')[0]
             .replaceAll(",", " ")}{" "}
           so&apos;m
         </p>
@@ -28,7 +31,7 @@ export default function TotalPrice({ totalDiscount, totalPrice, months }) {
           <p>
             {totalDiscount
               .toLocaleString("en-US", { minimumFractionDigits: 2 })
-              .replaceAll(".00", "")
+              .split('.')[0]
               .replaceAll(",", " ")}{" "}
             so&apos;m
           </p>
@@ -36,13 +39,28 @@ export default function TotalPrice({ totalDiscount, totalPrice, months }) {
             Tejovingiz:{" "}
             {(totalPrice - totalDiscount)
               .toLocaleString("en-US", { minimumFractionDigits: 2 })
-              .replaceAll(".00", "")
+              .split('.')[0]
               .replaceAll(",", " ")}{" "}
             so&apos;m
           </p>
         </div>
       </div>
-      <button className={classes.buyBtn}>Rasmiylashtirishga o&apos;tish</button>
+      <Link href={'/checkout'} className={classes.checkoutBtn}>
+        <button className={classes.buyBtn}>Rasmiylashtirishga o&apos;tish</button>
+      </Link>
+
+      <div className={classes.checkoutMobileContainer}>
+        <div>
+          <p>Buyurtmangiz</p>
+          {totalDiscount
+          .toLocaleString("en-US", { minimumFractionDigits: 2 })
+          .split('.')[0]
+          .replaceAll(",", " ")} so&apos;m
+        </div>
+      <Link href={'/checkout'} className={classes.checkoutMobileBtn}>
+        <button className={classes.buyBtn}>Rasmiylashtirish</button>
+      </Link>
+      </div>
     </div>
   );
 }
