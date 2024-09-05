@@ -10,7 +10,8 @@ export default function AddToCart({ product }) {
   const addItem = (e) => {
     e.preventDefault();
 
-    dispatch(cartAction.addItem(product))
+    dispatch(cartAction.addItem(product));
+    dispatch(cartAction.setNotificationItem(product))
   };
 
   return (

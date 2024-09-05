@@ -13,8 +13,10 @@ import { CiLocationOn } from "react-icons/ci";
 import { RiMap2Line } from "react-icons/ri";
 import { RxQuestionMarkCircled } from "react-icons/rx";
 import { MdOutlineEmail } from "react-icons/md";
+import { useSelector } from "react-redux";
 
 export default function MiniHeader() {
+  const totalProduct = useSelector((state) => state.cart.totalProduct);
   const [cabinet, setCabinet] = useState(false);
   const pathname = usePathname();
 
@@ -53,6 +55,7 @@ export default function MiniHeader() {
           <p style={cabinet ? {} : { color: `${pathname === "/cart" ? "#7f4dff" : ""}` }}>
             Savat
           </p>
+          {totalProduct !== 0 && <span className={classes.cartQuantity}>{totalProduct}</span>}
         </Link>
         <Link href={"/wishes"} onClick={() => cabinetHandler(false)}>
           <CiHeart

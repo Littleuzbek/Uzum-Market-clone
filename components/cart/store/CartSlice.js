@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { ACTION } from "next/dist/client/components/app-router-headers";
 
 const CartSlice = createSlice({
   name: "cart",
@@ -7,6 +8,8 @@ const CartSlice = createSlice({
     totalProduct: 0,
     totalDiscount: 0,
     totalPrice: 0,
+    onlyBuy: false,
+    notificationItem: false,
     wishes: [],
     searchResult: []
   },
@@ -92,6 +95,48 @@ const CartSlice = createSlice({
     },
     setSearchResult(state,action){
       state.searchResult = action.payload
+    },
+    setOnlyBuyItem(state,action){
+
+      if(action.payload){
+        const newItem = {
+          discount:
+          typeof action.payload?.discount === "number"
+          ? action.payload.discount
+          : Number(action.payload.discount.replaceAll(" ", "")),
+          id: action.payload.id,
+          cartItemId: action.payload.id + (action.payload.color || "") + (action.payload.size || ""),
+          image: action.payload.image,
+          name: action.payload.name,
+          price:
+          typeof action.payload.price === "number"
+          ? action.payload.price
+          : Number(action.payload.price.replaceAll(" ", "")),
+          rating: action.payload.rating,
+          specs: action.payload.specs,
+          proType: action.payload.proType,
+          quantity: action.payload.quantity || 1,
+          totalPrice:
+          typeof action.payload.price === "number"
+          ? action.payload.price * (action.payload.quantity || 1)
+          : Number(action.payload.price.replaceAll(" ", "")) *
+          (action.payload.quantity || 1),
+          totalDiscount:
+          typeof action.payload.discount === "number"
+          ? action.payload.discount * (action.payload.quantity || 1)
+          : Number(action.payload.discount.replaceAll(" ", "")) *
+          (action.payload.quantity || 1),
+          color: action.payload.color || "",
+          size: action.payload.size || ""
+        };
+        
+        state.onlyBuy = [newItem];
+      }else{
+        state.onlyBuy = action.payload;
+      }
+    },
+    setNotificationItem(state,action){
+      state.notificationItem = action.payload
     }
   },
 });

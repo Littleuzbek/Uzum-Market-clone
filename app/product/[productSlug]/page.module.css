@@ -33,9 +33,17 @@
     display: block;
   }
   .productDetails > div:nth-child(1) {
+    width: 100%;
     display: block;
+    margin: 0;
   }
   .productDetails > div:nth-child(2) {
     margin: 2rem auto 0 auto;
+  }
+}
+
+@media (min-width: 639px) and (max-width: 959px) {
+  .productPage {
+    width: 100%;
   }
 }

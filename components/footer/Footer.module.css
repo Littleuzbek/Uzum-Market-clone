@@ -1,6 +1,7 @@
 .footer {
   width: 100%;
-  margin: 3rem 0 0 0;
+  margin: 3rem 0;
+  padding: 0 0 4rem 0;
   overflow: hidden;
 }
 
@@ -50,10 +51,7 @@
   text-align: center;
 }
 
-@media screen and (max-width: 639px) {
-  .footer {
-    padding: 0 0 4rem 0;
-  }
+@media screen and (max-width: 959px) {
   .footer > div {
     flex-direction: column;
     justify-content: normal;

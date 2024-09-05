@@ -1,12 +1,23 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import classes from "./Cart.module.css";
-import Link from "next/link";
+import { cartAction } from "./store/CartSlice";
+import { useRouter } from "next/navigation";
 
 export default function TotalPrice({ months }) {
   const deliveryDate = new Date().getDate() + 1;
   const deliveryMonth = new Date().getMonth() + (deliveryDate > 31 ? 1 : 0);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
   const totalDiscount = useSelector((state) => state.cart.totalDiscount);
+  const router = useRouter();
+  const dispatch = useDispatch();
+
+  const checkoutHandler =()=>{
+    dispatch(cartAction.setOnlyBuyItem(false));
+
+    setTimeout(() => {
+      router.push('/checkout')
+    }, 100);
+  }
 
   return (
     <div className={classes.totalPriceContainer}>
@@ -45,11 +56,11 @@ export default function TotalPrice({ months }) {
           </p>
         </div>
       </div>
-      <Link href={'/checkout'} className={classes.checkoutBtn}>
+      <div onClick={()=>checkoutHandler()} className={classes.checkoutBtn}>
         <button className={classes.buyBtn}>Rasmiylashtirishga o&apos;tish</button>
-      </Link>
+      </div>
 
-      <div className={classes.checkoutMobileContainer}>
+      <div onClick={()=>checkoutHandler()} className={classes.checkoutMobileContainer}>
         <div>
           <p>Buyurtmangiz</p>
           {totalDiscount
@@ -57,9 +68,9 @@ export default function TotalPrice({ months }) {
           .split('.')[0]
           .replaceAll(",", " ")} so&apos;m
         </div>
-      <Link href={'/checkout'} className={classes.checkoutMobileBtn}>
+      <div  className={classes.checkoutMobileBtn}>
         <button className={classes.buyBtn}>Rasmiylashtirish</button>
-      </Link>
+      </div>
       </div>
     </div>
   );

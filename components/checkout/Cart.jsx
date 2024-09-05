@@ -6,46 +6,12 @@ import { useSelector } from "react-redux";
 
 export default function Cart() {
   const cart = useSelector((state) => state.cart.cart);
-  const cartt = [
-    {
-      discount: 60000,
-      price: 320000,
-      rating: "5 (200 sharhlar)",
-      name: "Fast Charge Type-C kabelli 120 Vt, Zaryadchik",
-      id: 0,
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/lama-chat-40ea7.appspot.com/o/e1cb1072-1fa9-48f5-a9bf-11a284455c2d?alt=media&token=ef5a6671-36ef-4983-bc5f-89261658522a",
-      options: { color: "Qora" },
-      proType: "accessories",
-      specs: [
-        "Haddan tashqari issiqlik va qisqa tutashuvdan himoya qilish",
-        "Moslik: Samsung, Xiaomi, Redmi, Honor, Infinix, Android",
-        "Zaryadlash moslamasi 120 vatt; USB turi-c zaryadlovchi kabeli",
-        "Tez zaryadlash; Haddan tashqari yuk va qisqa tutashuvdan himoya qilish; USB ulagichi",
-      ],
-    },
-    {
-      discount: 60000,
-      price: 320000,
-      rating: "5 (200 sharhlar)",
-      name: "Fast Charge Type-C kabelli 120 Vt, Zaryadchik",
-      id: 1,
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/lama-chat-40ea7.appspot.com/o/e1cb1072-1fa9-48f5-a9bf-11a284455c2d?alt=media&token=ef5a6671-36ef-4983-bc5f-89261658522a",
-      options: { color: "Qora" },
-      proType: "accessories",
-      specs: [
-        "Haddan tashqari issiqlik va qisqa tutashuvdan himoya qilish",
-        "Moslik: Samsung, Xiaomi, Redmi, Honor, Infinix, Android",
-        "Zaryadlash moslamasi 120 vatt; USB turi-c zaryadlovchi kabeli",
-        "Tez zaryadlash; Haddan tashqari yuk va qisqa tutashuvdan himoya qilish; USB ulagichi",
-      ],
-    },
-  ];
+  const onlyBuyItem = useSelector((state) => state.cart.onlyBuy);
+  const items = onlyBuyItem ? onlyBuyItem : cart;
   return (
     <>
       <div className={classes.deliveringItems}>
-        {cart?.map((product) => (
+        {items?.map((product) => (
           <div key={product?.id}>
             <Image src={product?.image} sizes="auto" fill alt="" />
             <div>
@@ -83,7 +49,7 @@ export default function Cart() {
       </div>
 
       <div className={classes.deliveringItemsMobile}>
-        {cart?.map((product) => (
+        {items?.map((product) => (
           <div key={product?.id}>
             <Image src={product?.image} sizes="auto" fill alt="" />
             <div>

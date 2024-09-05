@@ -6,6 +6,7 @@ import CartButton from "./CartButton";
 import WishButton from "./WishButton";
 import Login from "./Login";
 import MiniHeader from "./MiniHeader";
+import Notification from "./Notification";
 
 export default function MainHeader() {
   return (
@@ -41,6 +42,7 @@ export default function MainHeader() {
         </Link>
       </div>
       <MiniHeader />
+      <Notification />
     </header>
   );
 }

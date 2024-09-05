@@ -32,6 +32,7 @@
   width: 100%;
   display: flex;
   font-size: 0.88rem;
+  margin: 0.5rem 0 1rem 0;
 }
 
 .seller > a {
@@ -214,20 +215,19 @@
   font-size: 1.15rem;
   border-radius: 10px;
   border: 2px solid #723ef7;
+  background-color: white;
   cursor: pointer;
   transition: 0.3s;
+  color: #723ef7;
 }
 
 .btnContainer > button:nth-child(1) {
   background-color: #723ef7;
+  color: white;
 }
 
 .btnContainer > button:nth-child(1):hover {
   background-color: #7f4dff;
-}
-
-.btnContainer > button:nth-child(2):hover {
-  background-color: rgb(207, 207, 207);
 }
 
 .infoBanner {
@@ -287,11 +287,17 @@
   font-size: 1.1rem;
 }
 
+.addToCart,
+.priceContainerMobile {
+  display: none;
+}
+
 @media screen and (max-width: 639px) {
   .shopDetails {
-    width: 100%;
+    width: 95%;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
   }
   .shopping > div:nth-child(1) > div {
     text-indent: -9999px; /* Moves text far out of view */
@@ -304,7 +310,7 @@
   .amountContainer {
     display: none;
   }
-  .priceContainerMobile{
+  .priceContainerMobile {
     margin: 0 0 1rem 0;
   }
   .priceContainerMobile > p {
@@ -318,26 +324,26 @@
     font-size: 1.25rem !important;
   }
   .seller,
-  .credit{
-    margin:  0 0 1rem 0;
+  .credit {
+    margin: 0 0 1rem 0;
   }
-  .seller > a{
-    margin: 0 0 0 .5rem;
+  .seller > a {
+    margin: 0 0 0 0.5rem;
     font-weight: 500;
   }
-  .credit > span{
+  .credit > span {
     height: 50%;
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
-  .btnContainer{
+  .btnContainer {
     display: none;
   }
   .shortInfo > p,
-  .purchased{
+  .purchased {
     font-weight: 500;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
-  .pickColor{
+  .pickColor {
     margin: 1rem 0 1rem 0;
   }
 
@@ -351,40 +357,46 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 .5rem;
+    padding: 0 0.5rem;
     z-index: 22;
   }
-  .addToCart > div > p{
+  .addToCart > div > p {
     font-weight: 550;
   }
-  .addToCart > div > s{
-    font-size: .8rem;
+  .addToCart > div > s {
+    font-size: 0.8rem;
   }
   .addToCart > button {
-    padding: .7rem 2rem;
-    margin: 0 .5rem 0 0;
+    padding: 0.7rem 2rem;
+    margin: 0 0.5rem 0 0;
     border-radius: 10px;
-    background-color:#7f4dff;
+    background-color: #7f4dff;
     color: white;
     border: none;
   }
-  .addMore{
+  .addMore {
     background-color: #7f4dff;
-    padding: .7rem 1rem !important;
+    padding: 0.7rem 1rem !important;
     color: white;
     border-radius: 10px;
-    font-size: .8rem !important;
+    font-size: 0.8rem !important;
   }
-  .toCartPage{
+  .toCartPage {
     border: 1px solid #7f4dff;
-    padding: .6rem 1rem;
-    margin: 0 .5rem 0 0;
+    padding: 0.6rem 1rem;
+    margin: 0 0.5rem 0 0;
     color: #7f4dff;
     border-radius: 10px;
     font-size: 1rem;
     font-weight: 550;
     text-decoration: none;
     display: flex;
-    gap: .5rem;
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 959px) {
+  .shopDetails {
+    width: 25rem;
   }
 }

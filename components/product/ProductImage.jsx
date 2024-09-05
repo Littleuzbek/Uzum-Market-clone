@@ -33,7 +33,7 @@ export default function ProductImage({ productImage }) {
           />
       </div>
       <div>
-        <Image src={productImage} style={{ transform: image}} alt="" fill sizes="auto" priority/>
+        <Image src={productImage} style={{ transform: image}} alt="" fill sizes="auto" priority />
       </div>
     </div>
 

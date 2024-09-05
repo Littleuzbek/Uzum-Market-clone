@@ -21,6 +21,7 @@ import classes from "./ShoppingDetails.module.css";
 import Options from "./shoppingDetails/Options";
 import { FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function ShoppingDetails({ productDetails }) {
   const [quantity, setQuantity] = useState(1);
@@ -31,6 +32,7 @@ export default function ShoppingDetails({ productDetails }) {
   const inWish = wishes?.find(item => item.id === productDetails.id);
   const inCart = (cart?.filter(product => product.id === productDetails.id)?.length === 0);
   const quantityForMobile = cart?.filter(product => product.id === productDetails.id)[0]?.quantity || 1;
+  const router = useRouter();
   const dispatch = useDispatch();
 
   const amountHandler = (action) => {
@@ -57,8 +59,32 @@ export default function ShoppingDetails({ productDetails }) {
       color: activeColor || '',
       size: activeSize || '',
     };
+
     dispatch(cartAction.addItem(addingItem));
+    dispatch(cartAction.setOnlyBuyItem(false));
   };
+
+  const buyItem =()=>{
+    const buyingItem = {
+      discount: productDetails.discount,
+      id: productDetails.id,
+      name: productDetails.name,
+      image: productDetails.image,
+      price: productDetails.price,
+      rating: productDetails.rating,
+      specs: productDetails.specs,
+      proType: productDetails.proType,
+      quantity: quantity,
+      color: activeColor || '',
+      size: activeSize || '',
+    };
+    dispatch(cartAction.setOnlyBuyItem(buyingItem));
+
+    setTimeout(()=>{
+      router.push('/checkout')
+    }, 100)
+  }
+
   return (
     <div className={classes.shopDetails}>
       <div className={classes.shopping}>
@@ -137,7 +163,10 @@ export default function ShoppingDetails({ productDetails }) {
           >
             Savatga qo&apos;shish
           </button>
-          <button>Xarid qilish</button>
+          <button 
+          onClick={()=>buyItem()}>
+            Xarid qilish
+          </button>
         </div>
         <div className={classes.infoBanner}>
           <div className={classes.delivery}>
@@ -169,7 +198,7 @@ export default function ShoppingDetails({ productDetails }) {
           Bu hafta 40 kishi sotib oldi
         </p>
         <div className={classes.shortInfo}>
-          <p>Mahsulot haqida qisqacha</p>
+          {productDetails?.specs?.length !== 0 && <p>Mahsulot haqida qisqacha</p>}
           <ProductInfo productDetails={productDetails} />
         </div>
       </div>

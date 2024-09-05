@@ -13,7 +13,7 @@ import classes from "@/components/cards/Card.module.css";
 export default function RelatedProduct({ relatedProducts }) {
   const ref = useRef();
   const { events } = useDraggable(ref);
-  const [position,setPosition] = useState(0)
+  const [position, setPosition] = useState(0);
   return (
     <Fragment>
       <h1 className={classes.relatedTitle}>O&apos;xshash mahsulotlar</h1>
@@ -21,21 +21,10 @@ export default function RelatedProduct({ relatedProducts }) {
         className={`${classes.relatedProducts} flex max-w-xl space-x-3 overflow-x-scroll scrollbar-hide`}
         ref={ref}
         {...events}
-        onScroll={(e)=>{setPosition(e.target.scrollLeft)}}
+        onScroll={(e) => {
+          setPosition(e.target.scrollLeft);
+        }}
       >
-        <button 
-        className={classes.scrollLeft} 
-        style={{transform: `translateX(${position}px)`}}
-        onClick={()=>{ref.current.scrollLeft -= 300}}
-        >
-          <FaAngleLeft />
-        </button>
-        <button 
-        className={classes.scrollRight} 
-        style={{transform: `translateX(${position}px)`}} 
-        onClick={()=>{ref.current.scrollLeft += 300}}>
-          <FaAngleRight />
-        </button>
         {relatedProducts?.map((product) => (
           <Link
             href={`/product/${product?.proType} ${product?.id}`}
@@ -43,7 +32,12 @@ export default function RelatedProduct({ relatedProducts }) {
             key={product?.id}
           >
             <div className={classes.image}>
-              <Image src={product?.image} alt={product?.name} fill sizes="auto" />
+              <Image
+                src={product?.image}
+                alt={product?.name}
+                fill
+                sizes="auto"
+              />
               <WishButton product={product} />
             </div>
             <div className={classes.shortInfo}>
@@ -79,6 +73,24 @@ export default function RelatedProduct({ relatedProducts }) {
             </div>
           </Link>
         ))}
+          <button
+            className={classes.scrollLeft}
+            style={{ transform: `translateX(${position}px)` }}
+            onClick={() => {
+              ref.current.scrollLeft -= 300;
+            }}
+          >
+            <FaAngleLeft />
+          </button>
+          <button
+            className={classes.scrollRight}
+            style={{ transform: `translateX(${position}px)` }}
+            onClick={() => {
+              ref.current.scrollLeft += 300;
+            }}
+          >
+            <FaAngleRight />
+          </button>
       </div>
     </Fragment>
   );

@@ -1,8 +1,8 @@
 "use client";
 
 import { useSelector } from "react-redux";
-import classes from "./Checkout.module.css";
 import Link from "next/link";
+import classes from "./Checkout.module.css";
 
 export default function TotalPrice() {
   const totalDiscount = useSelector((state) => state.cart.totalDiscount);
