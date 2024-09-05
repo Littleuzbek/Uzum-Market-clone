@@ -5,10 +5,11 @@ import Comments from "./Comments";
 import ShoppingDetails from "./ShoppingDetails";
 import RelatedProduct from "./RelatedProduct";
 
-export default async function Product({ productId }) {
+export default async function Product({ productId, title }) {
   const products = await getData();
   const filteredId = productId.split("%20");
   let type;
+  console.log(title);
   
   if (filteredId[0] === "laptops") {
     type = products?.laptops;
@@ -31,12 +32,12 @@ export default async function Product({ productId }) {
   if (filteredId[0] === "popular") {
     type = products?.popular;
   }
+
   const foundProduct = type?.find((product) => product.id === filteredId?.at(1));
   const relatedProducts = type?.filter(
     (product) => product.id !== filteredId?.at(1)
   );
 
-  
   return (
     <Fragment>
       <div>
