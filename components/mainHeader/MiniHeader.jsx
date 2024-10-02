@@ -44,7 +44,7 @@ export default function MiniHeader() {
         <Link href={"/search"} onClick={() => cabinetHandler(false)}>
           <SearchMini style={pathname === "/search" && (cabinet? false :"#7f4dff")} />
           <p style={cabinet ? {} : { color: `${pathname === "/search" ? "#7f4dff" : ""}` }}>
-            Qirish
+            Qidirish
           </p>
         </Link>
         <Link href={"/cart"} onClick={() => cabinetHandler(false)}>

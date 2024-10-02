@@ -15,7 +15,7 @@ export default function AddToCart({ product }) {
   };
 
   return (
-    <div className={classes.toCard} onClick={(e) => addItem(e)}>
+    <div className={classes.toCard} onClick={(e) => addItem(e)} role="button">
       <svg
         data-v-4004960e=""
         width="24"
