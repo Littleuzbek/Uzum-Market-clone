@@ -5,7 +5,6 @@ import Footer from "@/components/footer/Footer";
 import { Suspense } from "react";
 import StoreProvider from "@/components/cart/store/StoreProvider";
 import Loader from "@/components/loader/Loader";
-import Scroller from "./Scroller";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +14,13 @@ export const metadata = {
   content: 'width=device-width, initial-scale=1, user-scalable=no'
   
 };
+
+import dynamic from 'next/dynamic'
+
+const Scroller = dynamic(
+  () => import("./Scroller"),
+  { ssr: false }
+)
 
 
 export default function RootLayout({ children }) {
