@@ -5,6 +5,7 @@ import Footer from "@/components/footer/Footer";
 import { Suspense } from "react";
 import StoreProvider from "@/components/cart/store/StoreProvider";
 import Loader from "@/components/loader/Loader";
+import Scroller from "./Scroller";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
           <MainHeader />
           <Suspense fallback={<Loader />}>{children}</Suspense>
           <Footer />
+          <Scroller />
         </body>
       </html>
     </StoreProvider>
